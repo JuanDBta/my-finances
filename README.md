@@ -91,7 +91,7 @@ I created a Ruby on Rails application that allows the user to:
 
 > Add a link to your deployed project.
 
-- [Coming Soon...](https://github.com/JuanDBta/my-finances-app)
+- [Coming Soon...](https://github.com/JuanDBta/my-finances)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -113,7 +113,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone "https://github.com/JuanDBta/my-finances-app.git"
+  git clone "https://github.com/JuanDBta/my-finances.git"
 ```
 ### Install
 
@@ -138,7 +138,7 @@ Go to your /my-finances-app folder:
 
 ### Deployment
 
-You can deploy this project using:<br>[Coming Soon!!!](https://github.com/JuanDBta/my-finances-app)
+You can deploy this project using:<br>[Coming Soon!!!](https://github.com/JuanDBta/my-finances)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
