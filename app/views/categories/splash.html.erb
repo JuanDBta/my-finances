@@ -1,15 +1,80 @@
 <style>
   body {
-    font-family: 'Futura Nova', sans-serif;
+    font-family: 'Futura Nova Bold', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
   }
+
+  .splash-container {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 43vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-logo {
+    width: 100vw;
+    height: 48vw; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-title {
+    font-size: 5vw;
+}
+
+.welcome-links {
+    width: 30vw;
+    height: 22vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button {
+    width: 18vw;
+    height: 3vw;
+    border: 0;
+    border-radius: 5px;
+    background-color: #3778c2;
+    text-decoration: none;
+    text-align: center;
+    font-size: 3vw;
+    padding: 1.5vw;
+    color: #f0f0f0;
+}
+
+.signup-button {
+    width: 18vw;
+    height: 3vw;
+    border: 0;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    text-decoration: none;
+    text-align: center;
+    font-size: 3vw;
+    padding: 1.5vw;
+    font-family: 'Futura Nova Light', sans-serif;
+    color: grey;
+}
+
+
 </style>
 
-<div class="splash-container"
-<div class="app-logo"><h1 class="logo-title">My Finances</h1></div>
-<div class="welcome-links">
-                <%= link_to 'Sign In', new_user_session_path, class: 'login-button' %>
+<div class="splash-container">
+  <div class="app-logo"><h1 class="logo-title">My Finances</h1></div>
+  <div class="welcome-links">
+                <%= link_to 'Log In', new_user_session_path, class: 'login-button' %>
                 <%= link_to 'Sign Up', new_user_registration_path, class: 'signup-button' %>
-    </div>
+  </div>
 </div>
 
 
