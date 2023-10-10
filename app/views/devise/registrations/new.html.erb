@@ -32,11 +32,29 @@
 .field-password {
   margin-top: -1vw;
 }
+
+.input-photo {
+  color: rgb(152, 157, 163);
+  width: 20vw;
+  height: 6vw;
+  border: 0.3px rgb(152, 157, 163) solid;
+  padding: 0.5vw;
+  font-size: 1.3vw;
+  background-color: white;
+  background-image: url('/upload-picture.jpg');
+  background-repeat: no-repeat;
+  background-size: 150px;
+
+}
 </style>
 
 <div class="form-container">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+  <%= f.text_field :name, class: "input-photo", placeholder: "                   Upload picture" %>
+</div>
 
   <div class="field">
     <%= f.text_field :name, autofocus: true, class: "input", placeholder: "Full name", autocomplete: "name" %>
