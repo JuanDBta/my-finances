@@ -1,1 +1,16 @@
-<h1>My Finances App</h1>
+<div class="user-page">
+<h1>All Categories</h1>
+  <ul class="users-list">
+    <% @categories.each do |category| %>
+      <li class="user-info">
+        <div class="image">
+          <img src="<%= category.icon %>" alt="<%= category.name %>">
+        </div>
+        <div class="name">
+          <h3 class="username"><%= link_to category_operations_path(@category), class:"links" %></h3>
+          <p class="posts-counter">Total Amount: <%= @total_amount %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

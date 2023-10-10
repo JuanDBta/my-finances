@@ -6,4 +6,8 @@ class Category < ApplicationRecord
 
   belongs_to :user
   has_many :operations, dependent: :destroy
+
+  def total_amount
+    operations.sum(:amount)
+  end
 end

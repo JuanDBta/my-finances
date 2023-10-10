@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :categories, only: [:index, :new, :create, :show, :destroy] do
-    resources :operations, only: [:new, :create]
+    resources :operations, only: [:new, :create, :index, :show]
   end
 
   resources :operations, only: [:destroy]

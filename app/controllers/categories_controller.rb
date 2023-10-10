@@ -31,6 +31,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @transactions = @category.operations
+    @total_amount = @category.total_amount
   end
 
   def destroy
