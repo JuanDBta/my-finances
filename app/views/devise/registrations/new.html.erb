@@ -1,38 +1,69 @@
-<h2>Sign up</h2>
+<style>
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7vw;
+  gap: 0;
+}
+.input {
+  color: rgb(152, 157, 163);
+  width: 20vw;
+  height: 3vw;
+  border: 0.3px rgb(152, 157, 163) solid;
+  padding: 0.5vw;
+  font-size: 1.3vw;
+}
 
+.login {
+  width: 21.1vw;
+  height: 3vw;
+  border: 0;
+  border-radius: 5px;
+  background-color: #3778c2;
+  text-align: center;
+  font-size: 1vw;
+  color: #f0f0f0;
+  margin-bottom: 1vw;
+  cursor: pointer;
+}
+
+.field-password {
+  margin-top: -1vw;
+}
+</style>
+
+<div class="form-container">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name, autofocus: true, class: "input", placeholder: "Full name", autocomplete: "name" %>
   </div>
   
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true,  class: "input", placeholder: "Email", autocomplete: "email" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="field-password">
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, class: "input", placeholder: "Password", autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, class: "input", placeholder: "Password confirmation", autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign Up", class: "login" %>
   </div>
 
   <% if user_signed_in? %>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <%= link_to "Sign Out", destroy_user_session_path, class: "login", method: :delete %>
 <% end %>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
