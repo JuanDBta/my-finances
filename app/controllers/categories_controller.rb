@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     if @category.save
       flash[:success] = 'Category created !!!'
-      redirect_to root_path, notice: 'Category created successfully'
+      redirect_to authenticated_root, notice: 'Category created successfully'
     else
       flash.now[:error] = 'Error: Category not saved'
       render :new
@@ -39,7 +39,6 @@ class CategoriesController < ApplicationController
     authorize! :destroy, @category
   
     ActiveRecord::Base.transaction do
-      # Elimina todas las operaciones asociadas a la categoría
       @category.operations.destroy_all
   
       if @category.destroy
@@ -50,7 +49,7 @@ class CategoriesController < ApplicationController
       end
     end
   
-    redirect_to root_path
+    redirect_to authenticated_root
   end
   
 
