@@ -1,4 +1,9 @@
 class CategoriesController < ApplicationController
+
+  def splash
+    render layout: false
+  end
+  
     def index
       @categories = Category.all
     end
