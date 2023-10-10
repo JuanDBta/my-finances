@@ -1,1 +1,47 @@
-<h1>Add New Category</h1>
+<style>
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7vw;
+}
+.input {
+  color: rgb(152, 157, 163);
+  width: 20vw;
+  height: 3vw;
+  border: 0.3px rgb(152, 157, 163) solid;
+  padding: 0.5vw;
+  font-size: 1.3vw;
+}
+
+.login {
+  width: 21.1vw;
+  height: 3vw;
+  border: 0;
+  border-radius: 5px;
+  background-color: #3778c2;
+  text-align: center;
+  font-size: 1vw;
+  color: #f0f0f0;
+  margin-bottom: 1vw;
+  cursor: pointer;
+}
+</style>
+
+<div class="form-container">
+<%= form_with model: @category, url: categories_path, method: :post, local: true do |f| %>
+    <div class="field">
+      <%= f.text_field :name, class: "input", placeholder: "Category Name" %>
+    </div>
+  
+    <div class="field">
+      <%= f.text_field :icon, class: "input", placeholder: "Category Icon" %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit "Create", class: "login" %>
+    </div>
+  <% end %>
+  </div>
+  

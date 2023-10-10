@@ -71,6 +71,7 @@
             color: #f0f0f0;
             font-size: 2vw;
             font-weight: bold;
+            padding-left: 8vw;
         }
 
         .nav-bar-right {
@@ -97,10 +98,18 @@
         <ul>
             
         <% if user_signed_in? %>
-        <div class="menu-icon">
+        
+        <% if current_page?(new_category_path) %>
+        <%= link_to(:back, class: "back") do %>
+            <i class="fas fa-arrow-left fa-4x"></i>
+          <% end %>
+    <li><h1 class="login-title">Add Category</h1></li>
+  <% else %>
+  <div class="menu-icon">
           <i class="fas fa-bars fa-3x"></i>
         </div>
-        <li><h1 class="login-title">TRANSACTIONS</h1></li>
+    <li><h1 class="login-title">TRANSACTIONS</h1></li>
+  <% end %>
         <div class="nav-bar-right"
           <li><%= button_to 'Sign Out', destroy_user_session_path, class: "sign-out-button", method: :delete %></li>
           <div class="menu-icon">
