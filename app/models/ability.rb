@@ -6,7 +6,7 @@ class Ability
 
   def initialize(user)
     # Define abilities for the passed in user here. For example:
-
+    can :splash, :all
     user ||= User.new # guest user (not logged in)
 
     if user.admin?

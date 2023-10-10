@@ -9,4 +9,8 @@ class User < ApplicationRecord
 
   has_many :categories
   has_many :operations
+
+  def admin?
+    self.admin
+  end
 end

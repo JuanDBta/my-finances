@@ -45,7 +45,7 @@ class CategoriesController < ApplicationController
         flash[:success] = 'Category deleted !!!'
       else
         flash[:error] = 'Unable to delete category...'
-        raise ActiveRecord::Rollback # Revertirá la transacción si ocurre un error
+        raise ActiveRecord::Rollback
       end
     end
   
@@ -56,7 +56,7 @@ class CategoriesController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = User.find_by(id: params[:user_id]) || current_user
   end
 
   def category_params
