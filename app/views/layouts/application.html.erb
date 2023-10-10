@@ -72,6 +72,22 @@
             font-size: 2vw;
             font-weight: bold;
         }
+
+        .nav-bar-right {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2vw;
+        }
+
+        .sign-out-button {
+            color: #f0f0f0;
+            border: 0;
+            background: linear-gradient(to bottom, #2980b9, #3498db);
+            font-size: 1.5vw;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -85,9 +101,13 @@
           <i class="fas fa-bars fa-3x"></i>
         </div>
         <li><h1 class="login-title">TRANSACTIONS</h1></li>
-        <div class="menu-icon">
-          <i class="fas fa-search fa-3x"></i>
+        <div class="nav-bar-right"
+          <li><%= button_to 'Sign Out', destroy_user_session_path, class: "sign-out-button", method: :delete %></li>
+          <div class="menu-icon">
+            <i class="fas fa-search fa-3x"></i>
+          </div>
         </div>
+        
       <% else %>
         <%= link_to(:back, class: "back") do %>
           <i class="fas fa-arrow-left fa-4x"></i>
