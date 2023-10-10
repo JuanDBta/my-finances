@@ -8,19 +8,21 @@ Rails.application.routes.draw do
   # config/routes.rb
 
   get 'myfinances', to: 'categories#splash', as: :myfinances
-  resources :categories, only: [:index, :new, :create]
 
   authenticated :user do
     root to: 'categories#index', as: :authenticated_root
   end
-  
+
   unauthenticated do
     root to: 'categories#splash', as: :unauthenticated_root
   end
 
   devise_for :users
-  
 
-  
+  resources :categories, only: [:index, :new, :create, :show, :destroy] do
+    resources :operations, only: [:new, :create]
+  end
+
+  resources :operations, only: [:destroy]
 
 end
