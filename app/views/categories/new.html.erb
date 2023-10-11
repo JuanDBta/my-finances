@@ -30,7 +30,7 @@
 </style>
 
 <div class="form-container">
-<%= form_with model: @category, url: categories_path, method: :post, local: true do |f| %>
+<%= form_with model: @categories, url: categories_path, method: :post, local: true do |f| %>
     <div class="field">
       <%= f.text_field :name, class: "input", placeholder: "Category Name" %>
     </div>

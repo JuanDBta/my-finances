@@ -4,24 +4,26 @@ class CategoriesController < ApplicationController
   load_and_authorize_resource
   layout 'application'
   before_action :set_user
+  before_action :set_category, only: %i[show destroy]
 
   def splash
     render layout: false
   end
 
   def index
-    @categories = Category.all
+    @categories = current_user.categories.includes(:operations)
   end
 
   def new
-    @category = Category.new
+    @current_user = current_user
+    @categories = Category.new
   end
 
   def create
-    @category = Category.new(category_params)
-    if @category.save
+    @categories = current_user.categories.new(category_params)
+    if @categories.save
       flash[:success] = 'Category created !!!'
-      redirect_to authenticated_root, notice: 'Category created successfully'
+      redirect_to authenticated_root_url, notice: 'Category created successfully'
     else
       flash.now[:error] = 'Error: Category not saved'
       render :new
@@ -49,9 +51,12 @@ class CategoriesController < ApplicationController
       end
     end
   
-    redirect_to authenticated_root
+    redirect_to authenticated_root_url
   end
   
+  def set_category
+    @category = Category.find(params[:id])
+  end
 
   private
 

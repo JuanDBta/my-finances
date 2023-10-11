@@ -7,7 +7,7 @@
           <img src="<%= category.icon %>" alt="<%= category.name %>">
         </div>
         <div class="name">
-          <h3 class="username"><%= link_to category_operations_path(@category), class:"links" %></h3>
+          <h3 class="username"><%= link_to category.name, category_operations_path(category), class:"links" %></h3>
           <p class="posts-counter">Total Amount: <%= @total_amount %></p>
         </div>
       </li>

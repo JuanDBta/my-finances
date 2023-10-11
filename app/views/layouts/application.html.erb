@@ -96,40 +96,36 @@
 <header>
     <nav>
         <ul>
-            
-        <% if user_signed_in? %>
-        
-        <% if current_page?(new_category_path) %>
-        <%= link_to(:back, class: "back") do %>
-            <i class="fas fa-arrow-left fa-4x"></i>
+          <% if user_signed_in? %>
+            <% if current_page?(new_category_path) %>
+              <%= link_to(:back, class: "back") do %>
+                <i class="fas fa-arrow-left fa-4x"></i>
+              <% end %>
+              <li><h1 class="login-title">Add Category</h1></li>
+            <% else %>
+              <div class="menu-icon">
+                <i class="fas fa-bars fa-3x"></i>
+              </div>
+              <li><h1 class="login-title">HOME</h1></li>
+              <div class="nav-bar-right">
+                <li><%= button_to 'Sign Out', destroy_user_session_path, class: "sign-out-button", method: :delete %></li>
+                <div class="menu-icon">
+                  <i class="fas fa-search fa-3x"></i>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <%= link_to(:back, class: "back") do %>
+              <i class="fas fa-arrow-left fa-4x"></i>
+            <% end %>
+            <% if request.path == new_user_session_path %>
+              <h1 class="login-title">LOGIN</h1>
+              <li><%= link_to 'Log In', new_user_session_path %></li>
+            <% elsif request.path == new_user_registration_path %>
+              <h1 class="login-title">REGISTER</h1>
+              <li><%= link_to 'Log In', new_user_session_path %></li>
+            <% end %>
           <% end %>
-    <li><h1 class="login-title">Add Category</h1></li>
-  <% else %>
-  <div class="menu-icon">
-          <i class="fas fa-bars fa-3x"></i>
-        </div>
-    <li><h1 class="login-title">TRANSACTIONS</h1></li>
-  <% end %>
-        <div class="nav-bar-right"
-          <li><%= button_to 'Sign Out', destroy_user_session_path, class: "sign-out-button", method: :delete %></li>
-          <div class="menu-icon">
-            <i class="fas fa-search fa-3x"></i>
-          </div>
-        </div>
-        
-      <% else %>
-        <%= link_to(:back, class: "back") do %>
-          <i class="fas fa-arrow-left fa-4x"></i>
-        <% end %>
-        <% if request.path == new_user_session_path %>
-          <h1 class="login-title">LOGIN</h1>
-          <li><%= link_to 'Log In', new_user_session_path %></li>
-        <% elsif request.path == new_user_registration_path %>
-          <h1 class="login-title">REGISTER</h1>
-          <li><%= link_to 'Log In', new_user_session_path %></li>
-        <% end %>
-      <% end %>
-      
         </ul>
     </nav>
 </header>
