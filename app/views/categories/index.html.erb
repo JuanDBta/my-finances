@@ -16,4 +16,5 @@
   <div class="add-button">
     <%= link_to 'add a new category', new_category_path, class: 'new' %>
   </div>
+  <%= button_to 'sign out', destroy_user_session_path, class: "sign-out-button-cat", method: :delete %>
 </div>
