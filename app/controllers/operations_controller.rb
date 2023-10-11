@@ -15,7 +15,7 @@ class OperationsController < ApplicationController
   
       if @operation.save
         flash[:success] = 'Operation created !!!'
-        redirect_to authenticated_root_url
+        redirect_to root_path
       else
         flash.now[:error] = 'Error: Operation not saved'
         render :new

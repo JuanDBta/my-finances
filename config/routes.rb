@@ -9,9 +9,7 @@ Rails.application.routes.draw do
 
   get 'myfinances', to: 'categories#splash', as: :myfinances
 
-  authenticated :user do
-    root to: 'categories#index', as: :authenticated_root
-  end
+  root to: 'categories#index', as: :root
 
   unauthenticated do
     root to: 'categories#splash', as: :unauthenticated_root

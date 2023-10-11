@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
     @categories = current_user.categories.new(category_params)
     if @categories.save
       flash[:success] = 'Category created !!!'
-      redirect_to authenticated_root_url, notice: 'Category created successfully'
+      redirect_to root_path, notice: 'Category created successfully'
     else
       flash.now[:error] = 'Error: Category not saved'
       render :new

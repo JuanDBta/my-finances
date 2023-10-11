@@ -54,3 +54,22 @@
    cursor: pointer;
    font-family: 'Proxima Nova Light', sans serif;
 }
+
+.home-button {
+   margin-top: 1vw;
+}
+
+.homebutton {
+    border: 0;
+    border-radius: 5px;
+    background-color: #3778c2;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5vw;
+    padding-left: 9.4vw;
+    padding-right: 9.4vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    color: #f0f0f0;
+    font-family: 'Proxima Nova Light', sans serif;
+}
