@@ -21,6 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Proxima Nova Light', sans serif;
  }
  
  .new {
@@ -39,7 +40,9 @@
     justify-content: center;
     align-items: center;
     padding: 1vw;
+    font-family: 'Proxima Nova Light', sans serif;
  }
+
 
  .sign-out-button-cat {
    width: 22vw;
@@ -49,4 +52,5 @@
    background: linear-gradient(to bottom, #2980b9, #3498db);
    font-size: 1.5vw;
    cursor: pointer;
+   font-family: 'Proxima Nova Light', sans serif;
 }

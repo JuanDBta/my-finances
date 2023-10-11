@@ -1,1 +1,59 @@
-<h1>Add New Operation</h1>
+<style>
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7vw;
+  margin-left: 5vw;
+}
+.input {
+  font-family: 'Proxima Nova Light', sans serif;
+  color: rgb(152, 157, 163);
+  width: 20vw;
+  height: 3vw;
+  border: 0.3px rgb(152, 157, 163) solid;
+  padding: 0.5vw;
+  font-size: 1.3vw;
+}
+
+.login {
+  font-family: 'Proxima Nova Light', sans serif;
+  width: 21.1vw;
+  height: 3vw;
+  border: 0;
+  border-radius: 5px;
+  background-color: #3778c2;
+  text-align: center;
+  font-size: 1vw;
+  color: #f0f0f0;
+  margin-bottom: 1vw;
+  cursor: pointer;
+}
+
+.transaction-title {
+  font-family: 'Proxima Nova Bold', sans serif;
+  font-size: 1.7vw;
+  color: rgb(152, 157, 163);
+}
+
+</style>
+
+<div class="form-container">
+<%= form_with(model: [@category, @operation], local: true) do |f| %>
+    <h3 class="transaction-title">Transaction for <%= @category.name %></h3>
+    <div>
+      <%= f.text_field :name, class: 'input', placeholder: 'Transaction name' %>
+    </div>
+  
+    <div>
+      <%= f.text_field :amount, class: 'input' %>
+    </div>
+  
+    <div>
+      <%= f.submit 'Save', class: 'login' %>
+    </div>
+  <% end %>
+  
+  </div>
+  

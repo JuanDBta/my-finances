@@ -11,8 +11,9 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = current_user.categories.includes(:operations)
-  end
+    @categories = Category.all
+  @category = Category.new
+    end
 
   def new
     @current_user = current_user
