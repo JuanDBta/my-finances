@@ -105,15 +105,16 @@
           <% end %>
           <li><h1 class="login-title">Add Category</h1></li>
           <%= button_to 'Sign Out', destroy_user_session_path, class: "sign-out-button", method: :delete %>
-        <% else %>
-          <div class="menu-icon">
-            <i class="fas fa-bars fa-3x"></i>
-          </div>
-          <li><h1 class="login-title">HOME</h1></li>
+
+          <% else %>
+            <div class="menu-icon">
+              <i class="fas fa-bars fa-3x"></i>
+            </div>
+            <li><h1 class="login-title">TRANSACTIONS</h1></li>
             <div class="menu-icon">
               <i class="fas fa-search fa-3x"></i>
             </div>
-        <% end %>
+          <% end %>
         
           <% else %>
             <%= link_to(:back, class: "back") do %>

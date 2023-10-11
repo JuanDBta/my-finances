@@ -33,7 +33,7 @@
 
 .transaction-title {
   font-family: 'Proxima Nova Bold', sans serif;
-  font-size: 1.7vw;
+  font-size: 1.5vw;
   color: rgb(152, 157, 163);
 }
 
@@ -41,7 +41,7 @@
 
 <div class="form-container">
 <%= form_with(model: [@category, @operation], local: true) do |f| %>
-    <h3 class="transaction-title">Transaction for <%= @category.name %></h3>
+    <h3 class="transaction-title">New Transaction for <%= @category.name %></h3>
     <div>
       <%= f.text_field :name, class: 'input', placeholder: 'Transaction name' %>
     </div>
