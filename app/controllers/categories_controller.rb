@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Generate the file.
 
 class CategoriesController < ApplicationController
