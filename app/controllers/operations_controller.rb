@@ -11,7 +11,7 @@ class OperationsController < ApplicationController
 
     def index
       @category = Category.find(params[:category_id])
-      @operations = @category.operations
+      @operations = @category.operations.order(created_at: :desc)
       @total_amount = @operations.sum(:amount)
     end
   
