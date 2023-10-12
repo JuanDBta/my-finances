@@ -1,6 +1,19 @@
 <div class="user-page">
   <ul class="users-list">
-    
+  <% @operations.each do |operation| %>
+    <li class="user-info">
+      <div class="name">
+        <div class="image">
+         <%= image_tag(@category.icon, alt: @category.name) %>
+        </div>
+        <div class="content">
+          <h3 class="username"><%= operation.name %></h3>
+          <h4 class="time"><%= operation.created_at.strftime('%d/%m/%Y') %></h4>
+        </div>
+        <p class="posts-counter"><%= operation.amount %></p>
+      </div>
+    </li>
+  <% end %>    
   </ul>
   <div class="buttons-section">
     <div class="add-button">

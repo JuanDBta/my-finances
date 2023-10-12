@@ -4,7 +4,7 @@
       <li class="user-info">
         <div class="name">
           <div class="image">
-            <img src="<%= category.icon %>" alt="<%= category.name %>">
+           <%= image_tag(category.icon, alt: category.name) %>
           </div>
           <div class="content">
             <h3 class="username"><%= link_to category.name, category_operations_path(category), class:"links" %></h3>
