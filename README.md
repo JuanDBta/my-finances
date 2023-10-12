@@ -4,7 +4,7 @@
 
 <h1><b>MY FINANCES APP</b></h1>
  
-  <img src="erd_diagram.png" alt="logo" width="400"  height="auto">
+  <img src="myfinances.png" alt="logo" width="400"  height="auto">
   <br/>
 
 </div>
