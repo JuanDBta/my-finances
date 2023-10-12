@@ -12,8 +12,8 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
-  @category = Category.new
-    end
+    @category = Category.find_by(id: params[:category_id])
+  end
 
   def new
     @current_user = current_user
@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @transactions = @category.operations
-    @total_amount = @category.total_amount
+    
   end
 
   def destroy

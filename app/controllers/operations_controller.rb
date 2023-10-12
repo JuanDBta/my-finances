@@ -8,6 +8,12 @@ class OperationsController < ApplicationController
     def new
       @operation = Operation.new
     end
+
+    def index
+      @category = Category.find(params[:category_id])
+  @operations = @category.operations
+  @total_amount = @operations.sum(:amount)
+    end
   
     def create
       @operation = @category.operations.build(operation_params)
