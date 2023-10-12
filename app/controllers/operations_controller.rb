@@ -22,7 +22,7 @@ class OperationsController < ApplicationController
 
     if @operation.save
       flash[:success] = 'Operation created!'
-      redirect_to root_path
+      redirect_to authenticated_root_path
     else
       flash.now[:error] = 'Error: Operation not saved'
       render :new
@@ -38,7 +38,7 @@ class OperationsController < ApplicationController
       flash[:error] = 'Unable to delete operation...'
     end
 
-    redirect_to root_path
+    redirect_to authenticated_root_path
   end
 
   private
