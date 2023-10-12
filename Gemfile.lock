@@ -106,6 +106,11 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
     erubi (1.12.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -121,14 +126,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.3)
-    json-schema (3.0.0)
-      addressable (>= 2.8)
     jsonapi-renderer (0.2.2)
     language_server-protocol (3.17.0.3)
-    launchy (2.5.2)
-      addressable (~> 2.8)
-    letter_opener (1.8.1)
-      launchy (>= 2.2, < 3)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -232,20 +231,6 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
-    rswag (2.10.1)
-      rswag-api (= 2.10.1)
-      rswag-specs (= 2.10.1)
-      rswag-ui (= 2.10.1)
-    rswag-api (2.10.1)
-      railties (>= 3.1, < 7.1)
-    rswag-specs (2.10.1)
-      activesupport (>= 3.1, < 7.1)
-      json-schema (>= 2.2, < 4.0)
-      railties (>= 3.1, < 7.1)
-      rspec-core (>= 2.14)
-    rswag-ui (2.10.1)
-      actionpack (>= 3.1, < 7.1)
-      railties (>= 3.1, < 7.1)
     rubocop (1.56.4)
       base64 (~> 0.1.1)
       json (~> 2.3)
@@ -314,16 +299,15 @@ DEPENDENCIES
   capybara
   debug
   devise
+  factory_bot_rails
   importmap-rails
   jbuilder
-  letter_opener
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.7, >= 7.0.7.2)
   rails-controller-testing
   rspec-rails
-  rswag
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
   sprockets-rails
