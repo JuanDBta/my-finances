@@ -16,11 +16,12 @@ class OperationsController < ApplicationController
     end
   
     def create
+      @category = Category.find(params[:operation][:category_id]) # Esto obtiene la categoría seleccionada del formulario.
       @operation = @category.operations.build(operation_params)
       @operation.user = current_user
   
       if @operation.save
-        flash[:success] = 'Operation created !!!'
+        flash[:success] = 'Operation created!'
         redirect_to root_path
       else
         flash.now[:error] = 'Error: Operation not saved'
