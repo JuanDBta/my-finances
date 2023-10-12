@@ -83,7 +83,17 @@ I created a Ruby on Rails application that allows the user to:
 
 ### Key Features <a name="key-features"></a>
 
-- **[Created rails project]**
+- **[Set up the repository and tools]**
+- **[Created models according to the ERD diagram.]**
+- **[Implemented the authentication and authorization using Devise]**
+- **[Created the page to add a category]**
+- **[Created the splash page]**
+- **[Created registration and login page]**
+- **[Created the page to add a transaction]**
+- **[Created the transactions page]**
+- **[Added unit and integrations tests]**
+- **[Deployed the project]**
+- **[Recorded a video describing project]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -154,10 +164,9 @@ You can deploy this project using:<br>[Coming Soon!!!](https://github.com/JuanDB
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Login page and registration page]**
-- [ ] **[No N+1 queries happening]**
-- [ ] **[Navigation menu that allows users to open all of the pages you created]**
-- [ ] **[Unit and integration tests]**
+- [ ] **[Transaction Details Page]**
+- [ ] **[Add animations and transitions]**
+- [ ] **[Add more functionalities to navigation bar]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
