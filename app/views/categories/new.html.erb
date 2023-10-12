@@ -36,10 +36,35 @@
     <div class="field">
       <%= f.text_field :name, class: "input", placeholder: "Category Name" %>
     </div>
+    
+    <% icon_options = [
+       ['Transportation', image_path('transportation.png')],
+       ['Restaurants',image_path('restaurants.png') ],
+       ['Clothing', image_path('clothing.png')],
+       ['Utilities',image_path('utilities.png') ],
+       ['Health', image_path('health.png')],
+       ['Vacations', image_path('vacations.png')],
+       ['Tech', image_path('tech.png')],
+       ['Beauty', image_path('beauty.png')],
+       ['Supermarket', image_path('supermarket.png')],
+       ['Pets', image_path('pets.png')],
+       ['Sports', image_path('sports.png')],
+       ['Investments', image_path('investments.png')],
+
+]  %>
   
     <div class="field">
-      <%= f.text_field :icon, class: "input", placeholder: "Category Icon" %>
+      <%= f.select :icon, options_for_select(icon_options), prompt: "Select an icon" %>
     </div>
+
+    <div>
+    <% if @categories.icon.present? %>
+      <% selected_option = icon_options.find { |option| option[1] == @categories.icon } %>
+      <% if selected_option %>
+        <%= image_tag selected_option[1], alt: "Selected icon" %>
+      <% end %>
+    <% end %>
+  </div>
   
     <div class="actions">
       <%= f.submit "Save", class: "login" %>

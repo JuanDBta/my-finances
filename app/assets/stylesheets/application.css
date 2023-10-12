@@ -203,3 +203,21 @@ img {
    margin-left: 20.7vw;
    margin-top: 0;
 }
+
+select {
+   background-color: white;
+   color: rgb(152, 157, 163);
+   border: 0.3px rgb(152, 157, 163) solid;
+   padding: 5px;
+   font-family: 'Proxima Nova Light', sans serif;
+   font-size: 1.5vw;
+   width: 21.1vw;
+   height: 4vw;
+ }
+ 
+ select option {
+   background-color: white;
+   color: rgb(152, 157, 163);
+   font-family: 'Proxima Nova Light', sans serif;
+ }
+ 
