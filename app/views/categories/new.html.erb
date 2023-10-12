@@ -53,22 +53,19 @@
 
 ]  %>
   
-    <div class="field">
-      <%= f.select :icon, options_for_select(icon_options), prompt: "Select an icon" %>
-    </div>
-
-    <div>
-    <% if @categories.icon.present? %>
-      <% selected_option = icon_options.find { |option| option[1] == @categories.icon } %>
-      <% if selected_option %>
-        <%= image_tag selected_option[1], alt: "Selected icon" %>
-      <% end %>
-    <% end %>
+  <div class="field">
+    <%= f.select :icon, options_for_select(icon_options.map { |name, image| [name, image_path(image)] }), prompt: "Select an icon" %>
   </div>
-  
-    <div class="actions">
-      <%= f.submit "Save", class: "login" %>
-    </div>
+
+  <div>
+   <% if @categories.icon.present? %>
+    <%= image_tag image_path(@categories.icon), alt: "Selected icon" %>
   <% end %>
   </div>
+  
+  <div class="actions">
+    <%= f.submit "Save", class: "login" %>
+  </div>
+  <% end %>
+</div>
   
