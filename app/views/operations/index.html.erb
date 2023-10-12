@@ -1,4 +1,13 @@
 <div class="user-page">
+  <div class="name top">
+    <div class="image">
+      <%= image_tag(@category.icon, alt: @category.name) %>
+        </div>
+        <div class="content">
+          <h3 class="username all">All <%= @category.name %></h3>
+        </div>
+        <p class="posts-counter all low"><%= number_to_currency(@category.operations.sum(:amount), unit: "$") %></p>
+      </div>
   <ul class="users-list">
   <% @operations.each do |operation| %>
     <li class="user-info">
@@ -10,7 +19,7 @@
           <h3 class="username"><%= operation.name %></h3>
           <h4 class="time"><%= operation.created_at.strftime('%d/%m/%Y') %></h4>
         </div>
-        <p class="posts-counter"><%= operation.amount %></p>
+        <p class="posts-counter"><%= number_to_currency(operation.amount, unit: "$") %></p>
       </div>
     </li>
   <% end %>    

@@ -10,7 +10,7 @@
             <h3 class="username"><%= link_to category.name, category_operations_path(category), class:"links" %></h3>
             <h4 class="time"><%= category.created_at.strftime('%d/%m/%Y') %></h4>
           </div>
-          <p class="posts-counter"><%= category.operations.sum(:amount) %></p>
+          <p class="posts-counter"><%= number_to_currency(category.operations.sum(:amount), unit: "$") %></p>
         </div>
       </li>
     <% end %>
