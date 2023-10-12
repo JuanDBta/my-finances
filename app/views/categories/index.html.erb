@@ -1,20 +1,24 @@
 <div class="user-page">
-<h1>All Categories</h1>
   <ul class="users-list">
     <% @categories.each do |category| %>
       <li class="user-info">
-        <div class="image">
-          <img src="<%= category.icon %>" alt="<%= category.name %>">
-        </div>
         <div class="name">
-          <h3 class="username"><%= link_to category.name, category_operations_path(category), class:"links" %></h3>
-          <p class="posts-counter">Total Amount: <%= @total_amount %></p>
+          <div class="image">
+            <img src="<%= category.icon %>" alt="<%= category.name %>">
+          </div>
+          <div class="content">
+            <h3 class="username"><%= link_to category.name, category_operations_path(category), class:"links" %></h3>
+            <h4 class="time"><%= category.created_at.strftime('%d/%m/%Y') %></h4>
+          </div>
+          <p class="posts-counter">$ 12.74<%= @total_amount %></p>
         </div>
       </li>
     <% end %>
   </ul>
-  <div class="add-button">
-    <%= link_to 'add a new category', new_category_path, class: 'new' %>
+  <div class="buttons-section">
+    <div class="add-button">
+      <%= link_to 'add a new category', new_category_path, class: 'new' %>
+    </div>
+    <%= button_to 'sign out', destroy_user_session_path, class: "sign-out-button-cat", method: :delete %>
   </div>
-  <%= button_to 'sign out', destroy_user_session_path, class: "sign-out-button-cat", method: :delete %>
 </div>
