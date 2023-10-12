@@ -15,7 +15,6 @@ RSpec.describe 'Categories New', type: :feature do
     visit new_category_path
   end
 
-
   it 'displays the category name input field' do
     expect(page).to have_field('category_name')
   end

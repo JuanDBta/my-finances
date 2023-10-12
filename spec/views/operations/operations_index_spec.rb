@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Operations', type: :feature do
   let(:user) { FactoryBot.create(:user) }
   let(:category) { FactoryBot.create(:category) }
-  let(:operations) { FactoryBot.create_list(:operation, 3, category: category, user: user) }
+  let(:operations) { FactoryBot.create_list(:operation, 3, category:, user:) }
 
   before do
     sign_in user

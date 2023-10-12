@@ -18,7 +18,7 @@ RSpec.describe OperationsController, type: :controller do
     Category.create(
       name: 'Fast Food',
       icon: 'imgexample.png',
-      user: user
+      user:
     )
   end
 
@@ -45,6 +45,4 @@ RSpec.describe OperationsController, type: :controller do
       expect(response).to render_template(:new)
     end
   end
-
-  
 end

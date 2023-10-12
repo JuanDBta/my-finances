@@ -13,5 +13,4 @@ RSpec.describe 'Categories', type: :request do
   before(:each) do
     sign_in user
   end
-
 end
