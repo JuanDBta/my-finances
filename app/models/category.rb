@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Generate the file.
+
 class Category < ApplicationRecord
   validates :icon, presence: true
   validates :name, presence: true

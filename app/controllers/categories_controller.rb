@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Generate the file.
+
 class CategoriesController < ApplicationController
   load_and_authorize_resource
   layout 'application'
