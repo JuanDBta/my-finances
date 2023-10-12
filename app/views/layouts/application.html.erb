@@ -99,7 +99,7 @@
     <nav>
         <ul>
           <% if user_signed_in? %>
-          <% if current_page?(root_path) %>
+          <% if current_page?(authenticated_root_path) %>
             <div class="menu-icon">
               <i class="fas fa-bars fa-3x"></i>
             </div>
