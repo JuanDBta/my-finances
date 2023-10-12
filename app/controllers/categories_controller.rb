@@ -34,16 +34,15 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @transactions = @category.operations
-    
   end
 
   def destroy
     @category = Category.find(params[:id])
     authorize! :destroy, @category
-  
+
     ActiveRecord::Base.transaction do
       @category.operations.destroy_all
-  
+
       if @category.destroy
         flash[:success] = 'Category deleted !!!'
       else
@@ -51,10 +50,10 @@ class CategoriesController < ApplicationController
         raise ActiveRecord::Rollback
       end
     end
-  
+
     redirect_to authenticated_root_url
   end
-  
+
   def set_category
     @category = Category.find(params[:id])
   end

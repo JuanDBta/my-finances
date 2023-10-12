@@ -11,6 +11,6 @@ class User < ApplicationRecord
   has_many :operations
 
   def admin?
-    self.admin
+    admin
   end
 end

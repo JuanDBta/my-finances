@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # app/models/ability.rb
 
 class Ability
@@ -25,4 +26,3 @@ class Ability
     end
   end
 end
-
