@@ -101,7 +101,7 @@ I created a Ruby on Rails application that allows the user to:
 
 > Add a link to your deployed project.
 
-- [Coming Soon...](https://github.com/JuanDBta/my-finances)
+- [My Finances App](https://my-finances-0m69.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,7 +148,7 @@ Go to your /my-finances-app folder:
 
 ### Deployment
 
-You can deploy this project using:<br>[Coming Soon!!!](https://github.com/JuanDBta/my-finances)
+You can deploy this project using:<br>[My Finances App](https://my-finances-0m69.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
