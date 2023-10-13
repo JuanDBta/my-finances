@@ -1,0 +1,143 @@
+<!-- application.html.erb -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= yield(:title) || 'My Blog' %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <link href="https://db.onlinewebfonts.com/c/0376a58122a881d16a294512d3c947b1?family=Proxima+Nova+Regular" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <%= yield(:styles) %>
+
+    <style>
+        body {
+            font-family: 'Proxima Nova', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Navigation Bar Styles */
+        header {
+            background: linear-gradient(to bottom, #2980b9, #3498db);
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-direction: row;
+            list-style: none;
+            padding: 0.7vw;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #f0f0f0;
+            transition: color 0.3s;
+            font-size: 1.5vw;
+            font-family: 'Proxima Nova Light', sans serif;
+        }
+
+        nav ul li a:hover {
+            color: #ecf0f1;
+        }
+
+        .back {
+            color: #f0f0f0;
+            height: auto;
+        }
+
+        .login-title {
+            color: #f0f0f0;
+            font-size: 2vw;
+            padding-left: 4vw;
+            font-family: 'Proxima Nova Bold', sans serif;
+        }
+
+        .nav-bar-right {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2vw;
+        }
+
+        .sign-out-button {
+            color: #f0f0f0;
+            border: 0;
+            background: linear-gradient(to bottom, #2980b9, #3498db);
+            font-size: 1.5vw;
+            cursor: pointer;
+            font-family: 'Proxima Nova Light', sans serif;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+          <% if user_signed_in? %>
+          <% if current_page?(authenticated_root_path) %>
+            <div class="menu-icon">
+              <i class="fas fa-bars fa-3x"></i>
+            </div>
+            <li><h1 class="login-title">HOME</h1></li>
+            <div class="menu-icon">
+              <i class="fas fa-search fa-3x"></i>
+            </div>
+          <% elsif current_page?(new_category_path) %>
+          <%= link_to(:back, class: "back") do %>
+            <i class="fas fa-arrow-left fa-3x"></i>
+          <% end %>
+          <li><h1 class="login-title">Add Category</h1></li>
+          <%= button_to 'Sign Out', destroy_user_session_path, class: "sign-out-button", method: :delete %>
+          <% else %>
+          <%= link_to(:back, class: "back") do %>
+            <i class="fas fa-arrow-left fa-3x"></i>
+          <% end %>
+            <li><h1 class="login-title">TRANSACTIONS</h1></li>
+            <%= button_to 'Sign Out', destroy_user_session_path, class: "sign-out-button", method: :delete %>
+          <% end %>
+        
+          <% else %>
+            <%= link_to(:back, class: "back") do %>
+              <i class="fas fa-arrow-left fa-3x"></i>
+            <% end %>
+            <% if request.path == new_user_session_path %>
+              <h1 class="login-title">LOGIN</h1>
+              <li><%= link_to 'Log In', new_user_session_path %></li>
+            <% elsif request.path == new_user_registration_path %>
+              <h1 class="login-title">REGISTER</h1>
+              <li><%= link_to 'Log In', new_user_session_path %></li>
+            <% end %>
+          <% end %>
+        </ul>
+    </nav>
+</header>
+
+<%= yield %>
+
+</body>
+</html>
