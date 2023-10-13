@@ -1,6 +1,7 @@
 # Generate the file.
 
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!, except: [:splash]
   load_and_authorize_resource
   layout 'application'
   before_action :set_user

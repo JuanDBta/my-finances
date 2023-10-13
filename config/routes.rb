@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   # config/routes.rb
 
-  get 'myfinances', to: 'categories#splash', as: :myfinances
+  devise_for :users
 
   authenticated do
     root to: 'categories#index', as: :authenticated_root
@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   unauthenticated do
     root to: 'categories#splash', as: :unauthenticated_root
   end
-
-  devise_for :users
 
   resources :categories, only: %i[index new create show destroy] do
     resources :operations, only: %i[new create index show]

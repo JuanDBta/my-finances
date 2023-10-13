@@ -1,9 +1,11 @@
 # Generate the file.
 
 class OperationsController < ApplicationController
+  before_action :authenticate_user!, except: [:splash]
   load_and_authorize_resource
   before_action :set_category
   before_action :set_operation, only: [:destroy]
+  layout 'application'
 
   def new
     @operation = Operation.new
@@ -16,7 +18,7 @@ class OperationsController < ApplicationController
   end
 
   def create
-    @category = Category.find(params[:operation][:category_id]) # Esto obtiene la categoría seleccionada del formulario.
+    @category = Category.find(params[:operation][:category_id]) 
     @operation = @category.operations.build(operation_params)
     @operation.user = current_user
 
