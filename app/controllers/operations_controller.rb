@@ -18,7 +18,7 @@ class OperationsController < ApplicationController
   end
 
   def create
-    @category = Category.find(params[:operation][:category_id]) 
+    @category = Category.find(params[:operation][:category_id])
     @operation = @category.operations.build(operation_params)
     @operation.user = current_user
 
