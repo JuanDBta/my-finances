@@ -17,6 +17,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [📽️ Video Intro](#video)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -99,11 +100,16 @@ I created a Ruby on Rails application that allows the user to:
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
 - [My Finances App](https://my-finances-0m69.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📽️ Video Intro <a name="video"></a>
+
+- [Loom Introduction Video](https://my-finances-0m69.onrender.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
