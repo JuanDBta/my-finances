@@ -106,7 +106,7 @@ I created a Ruby on Rails application that allows the user to:
 
 ## 📽️ Video Intro <a name="video"></a>
 
-- [Loom Introduction Video](https://my-finances-0m69.onrender.com)
+- [Loom Introduction Video](https://www.loom.com/share/39f75f13f3694e02a1c0de1a73850886?sid=ad7d1eb1-794b-44ef-816d-ae5cd76f2b5a)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
