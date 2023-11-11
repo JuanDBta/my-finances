@@ -1,0 +1,89 @@
+<style>
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7vw;
+}
+.input {
+  color: rgb(152, 157, 163);
+  width: 20vw;
+  height: 3vw;
+  border: 0.3px rgb(152, 157, 163) solid;
+  padding: 0.5vw;
+  font-size: 1.3vw;
+  font-family: 'Proxima Nova Light', sans serif;
+}
+
+.login {
+  width: 21.1vw;
+  height: 3vw;
+  border: 0;
+  border-radius: 5px;
+  background-color: #3778c2;
+  text-align: center;
+  font-size: 1vw;
+  color: #f0f0f0;
+  margin-bottom: 1vw;
+  cursor: pointer;
+  font-family: 'Proxima Nova Light', sans serif;
+}
+
+select {
+  background-color: white;
+  color: rgb(152, 157, 163);
+  border: 0.3px rgb(152, 157, 163) solid;
+  padding: 5px;
+  font-family: 'Proxima Nova Light', sans serif;
+  font-size: 1.5vw;
+  width: 21.1vw;
+  height: 4vw;
+}
+
+select option {
+  background-color: white;
+  color: rgb(152, 157, 163);
+  font-family: 'Proxima Nova Light', sans serif;
+}
+
+</style>
+
+<div class="form-container">
+<%= form_with model: @categories, url: categories_path, method: :post, local: true do |f| %>
+    <div class="field">
+      <%= f.text_field :name, class: "input", placeholder: "Category Name" %>
+    </div>
+    
+    <% icon_options = [
+       ['Transportation', image_path('transportation.png')],
+       ['Restaurants',image_path('restaurants.png') ],
+       ['Clothing', image_path('clothing.png')],
+       ['Utilities',image_path('utilities.png') ],
+       ['Health', image_path('health.png')],
+       ['Vacations', image_path('vacations.png')],
+       ['Tech', image_path('tech.png')],
+       ['Beauty', image_path('beauty.png')],
+       ['Supermarket', image_path('supermarket.png')],
+       ['Pets', image_path('pets.png')],
+       ['Sports', image_path('sports.png')],
+       ['Investments', image_path('investments.png')],
+
+]  %>
+  
+  <div class="field">
+    <%= f.select :icon, options_for_select(icon_options.map { |name, image| [name, image_path(image)] }), prompt: "Select an icon" %>
+  </div>
+
+  <div>
+   <% if @categories.icon.present? %>
+    <%= image_tag image_path(@categories.icon), alt: "Selected icon" %>
+  <% end %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Save", class: "login" %>
+  </div>
+  <% end %>
+</div>
+  
