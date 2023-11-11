@@ -100,7 +100,7 @@ I created a Ruby on Rails application that allows the user to:
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [My Finances App](https://my-finances-djse.onrender.com/)
+- [My Finances App](https://my-finances-h7t3.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -154,7 +154,7 @@ Go to your /my-finances-app folder:
 
 ### Deployment
 
-You can deploy this project using:<br>[My Finances App](https://my-finances-djse.onrender.com/)
+You can deploy this project using:<br>[My Finances App](https://my-finances-h7t3.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
